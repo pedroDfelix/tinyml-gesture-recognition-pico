@@ -4,7 +4,7 @@ A small neural network that recognises hand-drawn shapes (circle, square, triang
 
 Course project for Advanced Computing Systems (SISTCA), BSc in Electrical and Computer Engineering, ISEP – Polytechnic of Porto, 2026.
 
-https://github.com/user-attachments/assets/b752b353-5906-46c2-958b-4c7b7b61dee1
+https://github.com/user-attachments/assets/c80502e5-68c4-4328-9ffe-27a85c7bfb63
 
 ## How it works
 
