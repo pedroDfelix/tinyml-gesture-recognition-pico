@@ -6,6 +6,8 @@ Course project for Advanced Computing Systems (SISTCA), BSc in Electrical and Co
 
 https://github.com/user-attachments/assets/c80502e5-68c4-4328-9ffe-27a85c7bfb63
 
+Full report: [TinyML_Gesture_Recognition_Report.pdf](TinyML_Gesture_Recognition_Report.pdf)
+
 ## How it works
 
 An ADXL345 accelerometer is attached to a pencil and read by the Pico over I2C. While you draw a shape, the Pico collects windows of 20 readings (X, Y, Z), normalises them and passes each window through the network. The predicted class and its confidence are printed on the serial terminal and shown on the LCD, e.g. `RECONHECIDO: Circulo (100%)`.
