@@ -57,5 +57,5 @@ Overall accuracy is 87.6% (688/785). Circle is almost always right (98%). The we
 
 ## Credits
 
-Team: Igor Ávila, Pedro Félix, João Patrão, Rodrigo Teixeira. Supervised by Prof. Rui Nuno Castro.
+Developed by Pedro Félix and João Patrão. Supervised by Prof. Rui Nuno Castro.
 Original repository: [jonnypatron/SISTCA](https://github.com/jonnypatron/SISTCA).
