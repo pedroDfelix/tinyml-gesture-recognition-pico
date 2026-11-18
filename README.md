@@ -52,7 +52,7 @@ Overall accuracy is 87.6% (688/785). Circle is almost always right (98%). The we
 
 ## C++ port
 
-The `cpp/` folder has the same classifier written in C++, as a first step towards running it with the Pico SDK instead of MicroPython:
+The same classifier is also written in C++, as a first step towards running it with the Pico SDK instead of MicroPython:
 
 - `gesture_model.h/.cpp` – preprocessing, the forward pass (dense layers, ReLU, softmax) and a `Classifier` class that reproduces the loop in `main.py` (rest filter, step of 10 readings, 75% threshold). No dynamic memory and no libraries beyond `<cmath>`, so it can be built for a microcontroller.
 - `weights.h` – generated from `ai_puro.py` by `gen_weights.py`, so the C++ and MicroPython versions always use the same weights.
@@ -60,11 +60,10 @@ The `cpp/` folder has the same classifier written in C++, as a first step toward
 - `compare_with_python.py` – runs the original Python model on the same windows and checks that both give the same answers.
 
 ```
-cd cpp
-python gen_weights.py ../ai_puro.py weights.h
+python gen_weights.py ai_puro.py weights.h
 g++ -std=c++17 -O2 -Wall -o evaluate evaluate.cpp gesture_model.cpp
-./evaluate .. cpp_predictions.csv
-python compare_with_python.py .. cpp_predictions.csv
+./evaluate . cpp_predictions.csv
+python compare_with_python.py . cpp_predictions.csv
 ```
 
 Result: the C++ version predicts the same class as the Python model in all 3,922 windows, with probabilities that differ by at most 1e-6 (the C++ code uses 32-bit floats). On the test set it gets the same 87.6% (688/785).
